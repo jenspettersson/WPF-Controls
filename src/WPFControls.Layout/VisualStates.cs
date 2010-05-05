@@ -4,7 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace CaliburnLab.Controls
+namespace WPFControls.Layout
 {
     internal static class VisualStates
     {
