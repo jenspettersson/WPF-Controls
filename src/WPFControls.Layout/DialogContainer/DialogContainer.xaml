@@ -82,36 +82,6 @@
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
-                            <VisualStateGroup x:Name="BusyStatusStates">
-                                <VisualState x:Name="Idle">
-                                    <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
-                                                                       Duration="00:00:00.001"
-                                                                       Storyboard.TargetName="content"
-                                                                       Storyboard.TargetProperty="(Control.IsEnabled)">
-                                            <DiscreteObjectKeyFrame KeyTime="00:00:00">
-                                                <DiscreteObjectKeyFrame.Value>
-                                                    <sys:Boolean>True</sys:Boolean>
-                                                </DiscreteObjectKeyFrame.Value>
-                                            </DiscreteObjectKeyFrame>
-                                        </ObjectAnimationUsingKeyFrames>
-                                    </Storyboard>
-                                </VisualState>
-                                <VisualState x:Name="Busy">
-                                    <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
-                                                                       Duration="00:00:00.001"
-                                                                       Storyboard.TargetName="content"
-                                                                       Storyboard.TargetProperty="(Control.IsEnabled)">
-                                            <DiscreteObjectKeyFrame KeyTime="00:00:00">
-                                                <DiscreteObjectKeyFrame.Value>
-                                                    <sys:Boolean>False</sys:Boolean>
-                                                </DiscreteObjectKeyFrame.Value>
-                                            </DiscreteObjectKeyFrame>
-                                        </ObjectAnimationUsingKeyFrames>
-                                    </Storyboard>
-                                </VisualState>
-                            </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                         <ContentControl x:Name="content"
                                         Content="{TemplateBinding Content}"
