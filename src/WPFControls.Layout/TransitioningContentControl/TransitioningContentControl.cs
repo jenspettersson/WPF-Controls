@@ -11,7 +11,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Animation;
 
-namespace WPFControls.Layout.TransitioningContentControl
+namespace WPFControls.Layout.Controls
 {
     public class TransitioningContentControl : ContentControl
     {

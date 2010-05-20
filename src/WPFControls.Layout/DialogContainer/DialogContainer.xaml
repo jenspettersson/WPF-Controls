@@ -1,37 +1,19 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib"
-                    xmlns:controlsToolkit="clr-namespace:WPFControls.Layout.Controls">
-
-    <Style TargetType="controlsToolkit:BusyIndicator">
-        <Setter Property="BusyContent"
-                Value="Please wait..." />
-        <Setter Property="IsTabStop"
-                Value="False" />
+                    xmlns:c="clr-namespace:WPFControls.Layout.Controls">
+    <Style TargetType="c:DialogContainer">
         <Setter Property="OverlayStyle">
             <Setter.Value>
                 <Style TargetType="Rectangle">
                     <Setter Property="Fill"
-                            Value="White" />
+                            Value="Black" />
                     <Setter Property="Opacity"
                             Value="0.5" />
                 </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="ProgressBarStyle">
-            <Setter.Value>
-                <Style TargetType="ProgressBar">
-                    <Setter Property="IsIndeterminate"
-                            Value="True" />
-                    <Setter Property="Height"
-                            Value="15" />
-                    <Setter Property="Margin"
-                            Value="8,0,8,8" />
-                </Style>
-            </Setter.Value>
-        </Setter>
-        <Setter Property="DisplayAfter"
-                Value="00:00:00.1" />
+
         <Setter Property="HorizontalAlignment"
                 Value="Stretch" />
         <Setter Property="VerticalAlignment"
@@ -40,17 +22,19 @@
                 Value="Stretch" />
         <Setter Property="VerticalContentAlignment"
                 Value="Stretch" />
+
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="controlsToolkit:BusyIndicator">
+                <ControlTemplate TargetType="c:DialogContainer">
                     <Grid>
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="VisibilityStates">
                                 <VisualState x:Name="Hidden">
                                     <Storyboard>
+
                                         <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
                                                                        Duration="00:00:00.001"
-                                                                       Storyboard.TargetName="busycontent"
+                                                                       Storyboard.TargetName="dialogcontent"
                                                                        Storyboard.TargetProperty="(UIElement.Visibility)">
                                             <DiscreteObjectKeyFrame KeyTime="00:00:00">
                                                 <DiscreteObjectKeyFrame.Value>
@@ -58,6 +42,7 @@
                                                 </DiscreteObjectKeyFrame.Value>
                                             </DiscreteObjectKeyFrame>
                                         </ObjectAnimationUsingKeyFrames>
+
                                         <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
                                                                        Duration="00:00:00.001"
                                                                        Storyboard.TargetName="overlay"
@@ -72,9 +57,10 @@
                                 </VisualState>
                                 <VisualState x:Name="Visible">
                                     <Storyboard>
+
                                         <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
                                                                        Duration="00:00:00.001"
-                                                                       Storyboard.TargetName="busycontent"
+                                                                       Storyboard.TargetName="dialogcontent"
                                                                        Storyboard.TargetProperty="(UIElement.Visibility)">
                                             <DiscreteObjectKeyFrame KeyTime="00:00:00">
                                                 <DiscreteObjectKeyFrame.Value>
@@ -82,6 +68,7 @@
                                                 </DiscreteObjectKeyFrame.Value>
                                             </DiscreteObjectKeyFrame>
                                         </ObjectAnimationUsingKeyFrames>
+
                                         <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
                                                                        Duration="00:00:00.001"
                                                                        Storyboard.TargetName="overlay"
@@ -133,7 +120,8 @@
                                         VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
                         <Rectangle x:Name="overlay"
                                    Style="{TemplateBinding OverlayStyle}" />
-                        <ContentPresenter x:Name="busycontent">
+
+                        <ContentPresenter x:Name="dialogcontent">
                             <ContentPresenter.Content>
                                 <Grid HorizontalAlignment="Center"
                                       VerticalAlignment="Center">
@@ -169,17 +157,16 @@
                                                     <RowDefinition />
                                                     <RowDefinition Height="Auto" />
                                                 </Grid.RowDefinitions>
-                                                <ContentPresenter Content="{TemplateBinding BusyContent}"
-                                                                  ContentTemplate="{TemplateBinding BusyContentTemplate}"
+                                                <ContentPresenter Content="{TemplateBinding DialogContent}"
+                                                                  ContentTemplate="{TemplateBinding DialogContentTemplate}"
                                                                   Margin="8" />
-                                                <ProgressBar Grid.Row="1"
-                                                             Style="{TemplateBinding ProgressBarStyle}" />
                                             </Grid>
                                         </Border>
                                     </Border>
                                 </Grid>
                             </ContentPresenter.Content>
                         </ContentPresenter>
+
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>

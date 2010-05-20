@@ -9,7 +9,7 @@ using System.Windows.Controls;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 
-namespace WPFControls.Layout.BusyIndicator
+namespace WPFControls.Layout.Controls
 {
     /// <summary>
     /// A control to provide a visual indicator when an application is busy.
