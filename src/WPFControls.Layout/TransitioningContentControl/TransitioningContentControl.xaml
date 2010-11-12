@@ -13,9 +13,9 @@
         <Setter Property="IsTabStop"
                 Value="True" />
         <Setter Property="HorizontalContentAlignment"
-                Value="Left" />
+                Value="Stretch" />
         <Setter Property="VerticalContentAlignment"
-                Value="Top" />
+                Value="Stretch" />
         <Setter Property="Transition"
                 Value="DefaultTransition" />
         <Setter Property="Template">
